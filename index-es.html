@@ -1,0 +1,686 @@
+<!doctype html>
+<!--Conditionals for IE9 Support-->
+<!--[if IE 9]><html lang="es" class="ie ie9"><![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Filetopia - Social File Sharing</title>
+    <meta name="description" content="Filetopia: Social File Sharing" />
+		<meta name="keywords" content="file sharing, secure, chat, meet online friends, chat safely, instant messaging, social network, moderated communities, collaborate" />
+		<meta name="author" content="emartin" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!--Favicon-->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!--Google Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
+    <!--Bootstrap 3.3.2-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!--Icon Fonts-->
+    <link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <link href="css/icon-moon.css" rel="stylesheet" media="screen">
+    <!--Animations-->
+    <link href="css/animate.css" rel="stylesheet" media="screen">
+    <!--Theme Styles-->
+    <link href="css/theme-styles.css" rel="stylesheet" media="screen">
+    <!--Color Schemes-->
+    <link href="css/colors/color-indigo.css" rel="stylesheet" media="screen">
+    <!--Modernizr-->
+		<script src="js/libs/modernizr.custom.js"></script>
+    <!--Adding Media Queries and Canvas Support for IE8-->
+    <!--[if lt IE 9]>
+      <script src="js/plugins/respond.min.js"></script>
+      <script src="js/plugins/excanvas.js"></script>
+    <![endif]-->
+  </head>
+
+  <!--Body-->
+  <body class="space-top">
+  
+  	<!--Page Preloading-->
+    <div id="preloader"><div id="spinner"></div></div>
+
+    <!--Login Modal-->
+    <div class="light-skin modal fade" id="loginModal" tabindex="-1" role="form" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Acceso</h4>
+          </div>
+          <div class="modal-body">
+            <form class="login-form" role="form">
+              <div class="form-group">
+                <label for="username">Usuario</label>
+                <input type="text" class="form-control" id="username" placeholder="Introduce el usuario" required>
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Introduce el Password" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Entrar</button>
+            </form>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    
+    <!--Header-->
+    <header class="stiky-header">
+        <!-- Lang selector -->
+        <nav class="main-navi">
+            <ul class="nav pull-right list-unstyled" >
+                <li class="has-dropdown" style="margin-right: 100px">
+                    <a href="#" style="border-top-color: transparent">
+                        <div class="flags flag-spain"> <i class="fa fa-caret-down" style="margin-left: 40px"></i></div>
+                    </a>
+                    <ul class="dropdown list-unstyled" style="margin-left: -50px; margin-top: -20px; max-width: 180px">
+                        <li>
+                            <a href="javascript:setLocale('en')">
+                                <div class="flags flag-american"><b style="margin-left: 40px">English</b></div></a>
+                        </li>
+                    </ul>
+
+                </li>
+
+            </ul>
+        </nav>
+    	<div class="container group">
+      	<a class="logo" href="index.html"><img src="img/logo-dark.png" alt="Filetopia"/></a>
+        <a class="logo-mobile" href="index.html"><img src="img/logo-mobile.png" alt="Filetopia"/></a>
+        <div class="navi-toggle group">
+        	<span class="dot"></span><span class="line"></span>
+          <span class="dot"></span><span class="line"></span>
+          <span class="dot"></span><span class="line"></span>
+          <span class="dot"></span><span class="line"></span>
+        </div>
+        <a class="btn btn-primary btn-login" href="#" data-toggle="modal" data-target="#loginModal"><i class="icon-user"></i>Entrar</a>
+        <nav class="main-navi">
+        	<ul>
+          	<li class="active"><a class="scroll-up" href="#">Inicio</a></li>
+            <li class=""><a class="scroll" href="#features">Funciones</a></li>
+            <li class=""><a class="scroll" href="#gallery">Galeria<i class="fa"></i></a>
+            </li>
+                <li><a class="scroll" href="#FAQ">FAQ</a></li>
+            <li><a class="scroll" href="#Download">Descargas</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
+    <!--Hero Unit with Slider-->
+    <section class="hero">
+    	<div class="container">
+        
+        <!--Hero Slider-->
+        <div class="row">
+          <div class="hero-slider">
+              <div class="slide first-slide">
+                  <div class="col-lg-3 col-md-6 col-sm-6 animated fadeInDown">
+                      <h2 style="margin-top:70px;" class="text-light text-left">Intercambio entre amigos.  A tu manera</h2>
+                      <p>Compartir entre amigos nunca ha sido tan fácil: Mantener el control de lo qué compartes y con quién lo haces en un chat seguro.</p>
+                      <p>Puedes crear o traer tu comunidad... o unirte a alguna de las que existen.</p>
+                      <p>Colabora y mantén el contacto con tus amigos!</p>
+                      <a class="btn btn-primary" href="#Download" alt="Descarga" >Descarga Ahora!</a>
+                  </div>
+                  <div class="col-lg-9 col-md-12 col-sm-12 animated fadeInRight">
+                      <div class="video">
+
+                          <object type="image/svg+xml"
+                                  width="300" height="200"
+                                  data="img/hero-slider/tablet2.svg"
+                                  class="hidden-xs hidden-sm">
+
+                          </object>
+
+                          <div class="vide-holder">
+                              <video controls autoplay muted poster="img/thumbs/ft-video-intro.png" id="video" style="width: 100%; height:515px">
+                                  <source src="ft-intro.mp4" type='video/mp4'/>
+                              </video>
+
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            <div class="slide ">
+              <div class="col-lg-5 col-md-5 col-sm-5 animated">
+                <h2 style="margin-top:50px;" class="text-light text-left">Organiza tu Espacio</h2>
+                <p>Puedes tener toda la información en una sóla ventana o distribuida entre varios monitores.</p>
+                <p>Aun cuando el software esté minimizado te mantendrá informado a través del área de iconos.</p>
+                  <p>Toda la actividad de las ventanas se muestra desde el área de Inicio para que tengas siempre el control.</p>
+                <a class="btn btn-primary" href="#gallery">Ve a la galería</a>
+              </div>
+              <div class="col-lg-7 col-md-7 col-sm-7 animated">
+                <img class="pull-right" src="img/thumbs/imacft.png" width="689" height="659" alt="Components and Styles"/>
+              </div>
+            </div>
+            <div class="slide">
+                <div class="col-lg-7 col-md-7 col-sm-7 animated fadeInRight">
+                    <img class="pull-left" src="img/thumbs/ft-themes.png" width="690" height="541" alt="Filetopia FX themes"/>
+                </div>
+              <div class="col-lg-5 col-md-5 col-sm-5 animated fadeInUp">
+                <h2 style="margin-top:50px;" class="text-light text-left">¡Vísteme como quieras!</h2>
+                <p>Con 9 temas diferentes para elegir en el programa.</p>
+                <p></p>
+                <p>Dispones de 6 temas oscuros y 3 claros. Elige el que vaya con tu estado de ánimo! </p>
+                <!--<a class="btn btn-primary" href="coming-soon.html">Go to Coming soon page</a>-->
+              </div>
+
+            </div>
+
+          </div>
+        </div><!--Close Hero Slider-->
+      </div>    	
+    </section><!--Close Hero-->
+
+
+    <!--Features-->
+    <section class="page-block" id="features">
+    	<div class="container">
+        <div class="row page-header">
+          <h2>Funciones</h2>
+          <!--<span>Subtext for header</span>-->
+        </div>
+        <div class="row features">
+          <div class="col-lg-4 col-md-4 col-sm-4">
+              <i class="feature-icon icon-list"></i>
+            <h3>Multi-platforma, Multi-lenguaje</h3>
+              <p>La versión en Java esta disponible para sistemas de escritorio: windows, linux...<br/>
+                 La versión Web está siendo desarrollada para dispositivos móbiles y navegadores.<br/>
+                 El software está disponible en 6 idiomas: Español, inglés, alemán, italiano, holandés y árabe.
+              </p>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4">
+              <i class="feature-icon icon-share"></i>
+            <h3>Compartir Selectivamente</h3>
+            <p>Crea las listas que necesites con el contenido que desees.  Compárteles con todos, con algunas salas, usuarios o grupos.
+                Asigna permisos a usarios y grupos: incluido el ancho de banda y espacio en tu servidor.</p>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4">
+              <i class="feature-icon icon-leaf"></i>
+            <h3>Interfaz de usuario Flexible</h3>
+            <p>Puedes flotar ventanas, cambiar la posición de los tabs y elegir entre 9 temas de programa y más de 25 temas de chat, o crear tu propio tema.</p>
+          </div>
+        </div>
+        <div class="row features">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <i class="feature-icon icon-bubbles3"></i>
+                <h3>Mensajería Intantánea</h3>
+                <p>Filetopia incluye un sistema completo de mensajería con funciones pensadas para hacer tu estancia segura y divertida.</p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <i class="feature-icon icon-shield"></i>
+                <h3>Moderación</h3>
+                <p> Nuestros más de 15 años de experiencia en la Filetopia Clásica nos han dado una buena perspectiva sobre la importancia de la moderación en sistemas abiertos.
+                    Este software incluye mucha funcionalidad para mantener a las personas <i>non gratas</i> alejadas de tu comunidad.
+             </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <i class="feature-icon icon-search"></i>
+                <h3>Búsquedas</h3>
+                <p>Aunque las búsquedas de ficheros globales no están implementadas para potenciar el compartir entre amigos, casi todo lo demás se puede buscar: salas, mensajes, listas, registros, chat, muros.. incluso dentro de los resultados de búsqueda.</p>
+              </div>
+        </div>
+      </div>
+
+
+
+    
+    <!--Gallery-->
+    <section class="page-block" id="gallery">
+    	<div class="container">
+        <div class="row page-header">
+          <h2>Galería de Imágenes</h2>
+          <span>Unas pocas pantallas de Filetopia FX para darte una idea</span>
+        </div>
+        <div class="row">
+          <ul class="gallery">
+            <li>
+              <a href="#" data-largesrc="img/thumbs/es/ft-contacts.png"
+                 data-title="Contactos Flotantes" data-description="Sigue el estado de tus amigos.  Podrás ver la habitación en la que están y seguirles allí con un sólo click.">
+                <img src="img/thumbs/es/th-contacts.png" alt="Contactos"/>
+                <span class="img-caption">Contactos</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-largesrc="img/thumbs/es/ft-notifications.png"
+                 data-title="Notificaciones" data-description="Recibe notificaciones por nuevos mensajes, envío de ficheros, invitaciones a chat, mensajes en los muros, etc. Desde alli podrás tomar la acción requerida.">
+                <img src="img/thumbs/es/th-notifications.png" alt="Notificaciones"/>
+                <span class="img-caption">Notificaciones</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-largesrc="img/thumbs/es/ft-home.png"
+                 data-title="Inicio" data-description="Desde la pantalla de inicio tienes una vista global de todas las ventanas y de la la actividad que sucede en ellas. Puedes organizar las ventanas y gestionar desde allí el estado flotante, esconderlas, cerrarlas, etc.">
+                <img src="img/thumbs/es/th-home.png" alt="Inicio"/>
+                <span class="img-caption">Inicio</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-largesrc="img/thumbs/es/ft-lists.png"
+                 data-title="Listas" data-description="Las listas de ficheros te permiten compartir y encontrar lo que buscas con facilidad. Puedes crear tantas como necesites para compartir en diferentes salas, con ciertos amigos o grupos.  Desde aquí también  puedes gestionar todas las que recibes en las salas o de tus contactos. Las búsquedas en listas te permiten encontrar ficheros fácilmente.">
+                <img src="img/thumbs/es/th-lists.png" alt="Listas"/>
+                <span class="img-caption">Listas</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-largesrc="img/thumbs/es/ft-messages.png"
+                 data-title="Mensajes" data-description="Envía y recibe mensajes de otros usuarios con facilidad.">
+                <img src="img/thumbs/es/th-messages.png" alt="Mensajes"/>
+                <span class="img-caption">Mensajes</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-largesrc="img/thumbs/es/ft-sidebar-contacts.png"
+                 data-title="Panel lateral mostrando Contactos" data-description="Una vista del panel lateral ocultable mostrando los contactos.">
+                <img src="img/thumbs/es/th-sidebar-contacts.png" alt="Panel lateral"/>
+                <span class="img-caption">Panel lateral con Contactos</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-largesrc="img/thumbs/es/ft-light-chat.png"
+                 data-title="Chat" data-description="Una pantalla de Chat que usa el tema Modena Light">
+                <img src="img/thumbs/es/th-light-chat.png" alt="Chat"/>
+                <span class="img-caption">Chat</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-largesrc="img/thumbs/es/ft-light-contacts.png"
+                 data-title="Contactos con tema claro" data-description="Una vista de la ventana flotante de contactos con el tema Modena Light.">
+                <img src="img/thumbs/es/th-light-contacts.png" alt="Contactos con tema claro"/>
+                <span class="img-caption">Contactos con tema claro</span>
+              </a>
+            </li>
+              <li>
+                  <a href="#" data-largesrc="img/thumbs/es/ft-light-list.png"
+                     data-title="Navegando por las listas" data-description="Navegando por las listas de ficheros usando un tema claro.">
+                      <img src="img/thumbs/es/th-light-list.png" alt="Navegando por las listas"/>
+                      <span class="img-caption">Navegando por las listas</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="#" data-largesrc="img/thumbs/es/ft-light-transfers.png"
+                     data-title="Transferencias" data-description="La ventana de Transferencias, desde donde controlas todas las descargas y subidas.">
+                      <img src="img/thumbs/es/th-light-transfers.png" alt="Transferencias"/>
+                      <span class="img-caption">Transferencias</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="#" data-largesrc="img/thumbs/es/ft-light-messages.png"
+                     data-title="Mensajes con tema claro" data-description="Ventana de Mensajes usando el tema Modena Light.">
+                      <img src="img/thumbs/es/th-light-messages.png" alt="Mensajes con tema claro"/>
+                      <span class="img-caption">Mensajes con tema claro</span>
+                  </a>
+              </li>
+              <li>
+                  <a href="#" data-largesrc="img/thumbs/es/ft-light-myrooms.png"
+                     data-title="Mis salas" data-description="Gestionando todas las salas públicas propias y en las que tengo derechos de administración.">
+                      <img src="img/thumbs/es/th-light-myrooms.png" alt="Mis salas"/>
+                      <span class="img-caption">Mis salas</span>
+                  </a>
+              </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!--FAQ-->
+    <section class="page-block faq" id="FAQ">
+    	<div class="container">
+        <div class="row page-header">
+          <h2>FAQ: Preguntas Frecuentes</h2>
+          <!--<span>Subtext for header</span>-->
+        </div>
+        <div class="row">
+        	<div class="col-lg-3 col-md-4 col-sm-4">
+          	<img class="img-center" src="img/faq-icon.png" alt="FAQ"/>
+          </div>
+        	<div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="panel-group" id="accordion-faq">
+              <div class="panel">
+                <a class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion-faq" href="#collapse1">
+                    Windows 8 me avisa de que esta descarga es potencialmente peligrosa
+                  <div class="indicator"><div class="icon"><span class="hr-line"></span><span class="vr-line"></span></div></div>
+                </a>
+                <div id="collapse1" class="panel-collapse collapse">
+                  <div class="panel-body">
+                      Este es el comportamiento por defecto de Windows 8 para todas las descargas que no disponen de un certificado digital o no están aprovadas por Microsoft. Recientemente adquirimos un certificado digital de clase 2, que certifica nuestra autoría y que la descarga no fué manipulada. No obstante, mientras Microsoft no apruebe la firma, será necesario seguir autorizando el programa manualmente.  El programa es perfectamente seguro para su uso.</br>
+                      También puedes descargar la versión Zip y descomprimirla en cualquier directorio.  Generará una versión portable que podrás usar si ya tienes instalado Java 8 en tu ordenador.
+                  </div>
+                </div>
+              </div>
+              <div class="panel">
+                <a class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion-faq" href="#collapse2">
+                    ¿Instalar el programa va a desconfigurar mi ordenador?  ¿Podré luego desinstalarlo fácilmente?
+                  <div class="indicator"><div class="icon"><span class="hr-line"></span><span class="vr-line"></span></div></div>
+                </a>
+                <div id="collapse2" class="panel-collapse collapse">
+                  <div class="panel-body">
+                      El programa lleva incluido su propia versión de Java y no va a interferir con la copia de Java del sistema si la tienes o con ninguna otra configuración.  Se puede desinstalar como cualquier otro programa.  Más aún, tienes la opción de instalar la versión "portable" que está auto-contenida y la puedes mover a cualquier sitio (como una llave USB) para usar desde cualquier ordenador sin necesidad de instalar nada.
+                  </div>
+                </div>
+              </div>
+              <div class="panel">
+                <a class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion-faq" href="#collapse3">
+                    ¿Podré crear mi propio servidor de Salas privado?
+                   <div class="indicator"><div class="icon"><span class="hr-line"></span><span class="vr-line"></span></div></div>
+                </a>
+                <div id="collapse3" class="panel-collapse collapse">
+                  <div class="panel-body">
+                      Si, fácilmente en tu propio ordenador, con tan solo especificar que el tipo de sala privada sea "Chat Directo Seguro". Estas salas están accesibles con una llave encryptada especial que puedes compartir con tus amigos. Ni siquiera es necesario que conectes a la red de Filetopia.
+                  </div>
+                </div>
+              </div>
+                <div class="panel">
+                    <a class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion-faq" href="#collapse4">
+                        ¿Puedo pegar imágenes en el chat y usar mis propios emoticonos animados?
+                        <div class="indicator"><div class="icon"><span class="hr-line"></span><span class="vr-line"></span></div></div>
+                    </a>
+                    <div id="collapse4" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Puedes copiar/pegar imágenes del chat y capturar iconos que han puesto otras personas.  Para poder introducir tus propias imágenes e iconos necesitas ser habilitado por un operador.  Esto es así para evitar problemas por contenido inapropiado en las comunidades.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <a class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion-faq" href="#collapse5">
+                        ¿Cuantas salas puedo tener?
+                        <div class="indicator"><div class="icon"><span class="hr-line"></span><span class="vr-line"></span></div></div>
+                    </a>
+                    <div id="collapse5" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Por defecto dispones de una sala pública y tantas salas privadas como quieras. En caso de tener una necesidad justificada para más salas públicas puedes ponerte en contacto con cualquier operador del sistema que te habilitará las salas que necesites.  Puedes gestionar, no obstante, tantas salas de otros usuarios como tengas permiso (estatus de operador)
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Downloads-->
+    <section class="page-block color" id="Download">
+        <div class="container">
+            <div class="row page-header">
+                <h2 class="text-light">Descargas</h2>
+                <!--<span class="text-light">Latest version</span>-->
+            </div>
+            <div class="row">
+                <div class="col-lg-5 col-md-5 hidden-sm hidden-xs">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs color central">
+                                <li class="active"><a href="#tab-instructions" data-toggle="tab">Versión: <span id="version"></span></a></li>
+                                <li><a href="#tab-changelog" data-toggle="tab">Cambios</a></li>
+
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="container">
+                                <div class="row tab-content central">
+                                    <div class="tab-pane fade in active" id="tab-instructions">
+                                        <div class="col-lg-5">
+                                            <h4 class="text-light">Instrucciones:</h4>
+                                            <p class="text-justify text-light">
+                                                Elige el instalador apropiado para tu sistema operativo. La version de 32 bits funciona en todos los Windows a partir de XP, pero la versión de 64 bits tiene mucha más capacidad.
+                                            </p>
+                                            <h4 class="text-light">Requisitos:</h4>
+                                            <p class="text-justify text-light">
+                                                Para la versión ZIP se debe disponer de Java 8 previamente instalado, puedes comprobar tu versión actual <a class="text-light" href="https://java.com/es/download/installed.jsp?detect=jre" target="_blank">aquí.</a> Las descargas de Windows utilizan su propio java integrado para no afectar a tu instalación y no requerir siguiera Java</p>
+                                        </div>
+                                        <img class="double-space-top" src="img/tablet.png" alt="Descargas"/>
+
+
+                                    </div>
+                                    <div class="tab-pane fade  text-light" id="tab-changelog">
+                                        <div class="row">
+                                            <div class="col-lg-5 animated fadeInRight" style="max-height: 600px; overflow-y: scroll;">
+                                                <div class="" id="changelog" >
+                                                    ----
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-lg-offset-1 col-md-offset-1">
+
+                    <div class="row space-bottom">
+                        <div class="col-lg-9 col-md-9">
+                            <h3 class="text-light" >Selecciona tu Descarga:</h3>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                            <img class="img-center" src="img/apps-icon.png" alt="Mobile Apps"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-10 col-md-11">
+                            <a class="btn btn-info btn-block" href="filetopiafx_windows_bundle.exe">
+                                <i class="icon-windows8"></i>Windows 64 bits</a>
+                            <a class="btn btn-info btn-block" href="filetopiafx_windows_bundle32.exe">
+                                <i class="icon-windows8"></i>Windows 32 bits - XP</a><a class="btn btn-warning btn-block" href="filetopiaFX.zip">
+                                <i class="icon-file-zip"></i>Fichero ZIP</a>
+                            <a class="btn btn-success btn-primary btn-block" href="linux/inst_ft.sh">
+                                <i class="icon-tux"></i>Linux (script de instalación)</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <p class="text-justify text-light"><b>Uso:</b> descarga el script y ejecuta:
+                                <b>bash inst_ft.sh</b>     en el lugar de descarga.<br/>
+                                (el script se debe ejecutar como administrador: usando sudo)
+                            </p>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+    
+    <!--Testimonials-->
+   <!-- <section class="page-block color" id="testimonials">
+    	<div class="container">
+        <div class="row page-header">
+          <h2 class="text-light">Testimonials</h2>
+          <span class="text-light">Subtext for header</span>
+        </div>
+        <div class="row">
+          <div id="testimonials-slider" class="testimonials-slider carousel slide" data-ride="carousel">
+            &lt;!&ndash; Indicators &ndash;&gt;
+            <ol class="carousel-indicators">
+              <li data-target="#testimonials-slider" data-slide-to="0" class="active"></li>
+              <li data-target="#testimonials-slider" data-slide-to="1"></li>
+              <li data-target="#testimonials-slider" data-slide-to="2"></li>
+            </ol>
+            &lt;!&ndash; Wrapper for slides &ndash;&gt;
+            <div class="carousel-inner">
+              <div class="item active">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-4">
+                      <img class="img-circle img-center" src="img/testimonials/dirk.png" width="192" height="192" alt="Dexter Dirk"/>
+                    </div>
+                    <div class="col-lg-9 col-md-9 col-sm-8">
+                      <blockquote>
+                        <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                        <footer class="text-light">Dexter Dirk</footer>
+                      </blockquote>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-4">
+                      <img class="img-circle img-center" src="img/testimonials/roe.png" width="192" height="192" alt="Richard Roe"/>
+                    </div>
+                    <div class="col-lg-9 col-md-9 col-sm-8">
+                      <blockquote>
+                        <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                        <footer class="text-light">Richard Roe</footer>
+                      </blockquote>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-4">
+                      <img class="img-circle img-center" src="img/testimonials/doe.png" width="192" height="192" alt="Jonathan Doe"/>
+                    </div>
+                    <div class="col-lg-9 col-md-9 col-sm-8">
+                      <blockquote>
+                        <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                        <footer class="text-light">Jonathan Doe</footer>
+                      </blockquote>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>-->
+    
+
+
+    
+    <!--Contacts-->
+    <section class="page-block contacts" id="contacts">
+    	<div class="container">
+        <div class="row page-header">
+          <h2>Contacta con nosotros</h2>
+
+        </div>
+        <div class="row">
+        	<div class="col-lg-4 col-md-4">
+          	<div class="row space-bottom">
+            	<div class="col-lg-9 col-md-9">
+              	<h3>Qué hacemos</h3>
+              </div>
+            	<div class="col-lg-3 col-md-3">
+                <img class="img-center" src="img/contacts/man.png" alt="About Us"/>
+              </div>
+            </div>
+            <div class="row">
+            	<div class="col-lg-12">
+              	<p class="text-justify">
+                    Mi nombre es Enrique Martín.  Desde 1999 desarrollo aplicaciones P2P y de comunicaciones para mi y para otros. Nuestro producto estrella es Filetopia. Cuando se creó, aún no existía el concepto de P2P, en ese sentido podemos decir que somos pioneros en el área</p><p>Este nuevo software lleva Filetopia al siglo 21.  Mediante el uso de tecnologías modernas y los recursos actuales, pero también aplicando nuestra experiencia para llevar la idea a un nuevo nivel.</p>
+                </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-lg-offset-1">
+          	<div class="row space-bottom">
+            	<div class="col-lg-8 col-md-8">
+              	<h3>Contacto</h3>
+              </div>
+            	<div class="col-lg-4 col-md-4">
+                <img class="img-center" src="img/contacts/plan.png" alt="Adress"/>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12" id="contact_form">
+                    <div id="contact_results" class="response-holder" ></div>
+                    <div id="contact_body">
+                        <form method="post"   class="feedback-form ajax-form" role="form" >
+                            <div class="form-group">
+                                <label class="sr-only" for="name1">Nombre</label>
+                                <input type="text" minlength="2" class="form-control" name="name" id="name1" placeholder="Nombre">
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="email1">Email</label>
+                                <input type="email" class="form-control" name="email" id="email1" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="message">Mensaje</label>
+                                <textarea class="form-control" minlength="5" name="message" id="message" rows="5" placeholder="Mensaje"></textarea>
+                            </div>
+                            <button type="submit" id="submit_btn" class="btn btn-primary">Submit</button>
+                            <!-- Validation Response -->
+                            <div id ="contact-validate" class="response-holder"></div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!--Social Networks-->
+    <section class="page-block" id="social">
+    	<div class="container">
+        <div class="row page-header">
+          <h2>Encuentranos en las redes sociales</h2>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="social-networks">
+              <a class="icon-facebook tooltipped" href="https://www.facebook.com/fIletopiafx/timeline" target="_blank" title="Facebook"></a>
+              <a class="icon-twitter tooltipped" href="#" title="Twitter"></a>
+              <a class="icon-google-plus tooltipped" href="#" title="Google+"></a>
+              <a class="icon-youtube tooltipped" href="#" title="Youtube"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!--Footer-->
+    <footer class="footer">
+    	<div class="container">
+        <div class="row"></div>
+        <div class="row">
+        	<div class="col-lg-12">
+          	<p class="copyright">&copy; 2015 Enrique Martín. Todos los derechos reservados.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <!--Scroll To Top Button-->
+    <div id="scroll-top" class="scroll-up"><i class="icon-arrow-up"></i></div>
+    
+    <!--Javascript (jQuery) Libraries and Plugins-->
+		<script src="js/libs/jquery-1.11.2.min.js"></script>
+		<script src="js/libs/jquery.easing.1.3.js"></script>
+		<script src="js/plugins/bootstrap.min.js"></script>
+		<script src="js/plugins/jquery.touchSwipe.min.js"></script>
+		<script src="js/plugins/jquery.placeholder.js"></script>
+        <script src="js/plugins/icheck.min.js"></script>
+        <script src="js/plugins/jquery.validate.min.js"></script>
+		<script src="js/plugins/gallery.js"></script>
+        <script src="js/plugins/jquery.fitvids.js"></script>
+		<script src="js/plugins/jquery.bxslider.min.js"></script>
+		<script src="js/plugins/waypoints.min.js"></script>
+        <script src="js/plugins/smoothscroll.js"></script>
+		<script src="js/landing.js"></script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-59786624-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>
+  </body><!--Close Body-->
+</html>
