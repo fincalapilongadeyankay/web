@@ -6,7 +6,7 @@ body{
 h1,h2,h3,h4,h5,h6{
   font-family:Poppins;
   margin-top: -70px; 
-  padding-top: 70px;"
+  padding-top: 70px;
 }
 
 p{
@@ -16,6 +16,17 @@ p{
     margin-top: -70px;
     padding-top: 70px;
    padding-bottom: 30px;
+}
+.inicio1 {
+  background-image: url('img/inicio.png');
+  background-repeat: no-repeat; 
+  background-size: 90%;
+  padding-bottom: 500px;
+}
+.inicio2 {
+  background-image: url('img/inicio.png');
+  background-repeat: no-repeat; 
+  background-size: 100%;
 }
 
 
@@ -31,15 +42,6 @@ p{
   color:#000 !important;
   font-weight:bold;
 }
-.inicio{
-  background-image: url("/img/inicio.png");
-  background-color: #cccccc;
-  height: 500px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  {
 #showcase{
   background-image: url("../img/pexels-photo-533360-md.jpeg");   
   background-size: cover;
