@@ -10,7 +10,8 @@ h1,h2,h3,h4,h5,h6{
 }
 
 p{
-  font-family:Roboto;
+  font-family: 'Calligraffitti';font-size: 25px;
+  font:bolder;
 }
 .prueba {
     margin-top: -70px;
