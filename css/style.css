@@ -4,7 +4,8 @@ body{
 }
 
 h1,h2,h3,h4,h5,h6{
-  font-family:Poppins;
+  font-family: 'Calligraffitti';font-size: 25px;
+  font:bolder;
   margin-top: -70px; 
   padding-top: 70px;
 }
